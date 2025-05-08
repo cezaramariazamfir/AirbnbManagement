@@ -32,7 +32,6 @@ Tema aleasa: Un sistem de management al proprietatilor date spre inchiriere pe t
 - lungime: double  
 - autonomieApa: int (in zile)
 
----
 
 ### 📅 Rezervare
 - id_rezervare: int  
@@ -42,7 +41,6 @@ Tema aleasa: Un sistem de management al proprietatilor date spre inchiriere pe t
 - costTotal: double  
 - status: Status (enum)
 
----
 
 ### 🧾 Enum Status
 
