@@ -38,7 +38,7 @@ Tema aleasa: Un sistem de management al proprietatilor date spre inchiriere pe t
 
 ### 🛎️ Rezervare
 - id_rezervare: int  
-- id_proprietate: int  
+- propritate: Proprietate  
 - dataStart: LocalDate  
 - dataEnd: LocalDate  
 - costTotal: double  
