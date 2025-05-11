@@ -4,8 +4,8 @@ public class Camper extends Proprietate{
     private double lungime;
     private int autonomieApa; //nr de zile
 
-    public Camper(int id_proprietate, String denumire, String locatie, int capacitate, boolean disponibilabilitate, double pretPeNoapte, double lungime, int autonomieApa) {
-        super(id_proprietate, denumire, locatie, capacitate, disponibilabilitate, pretPeNoapte);
+    public Camper(int id_proprietate, int id_proprietar, String denumire, String locatie, int capacitate, boolean disponibilabilitate, double pretPeNoapte, double lungime, int autonomieApa) {
+        super(id_proprietate, id_proprietar,denumire, locatie, capacitate, disponibilabilitate, pretPeNoapte);
         this.lungime = lungime;
         this.autonomieApa = autonomieApa;
         this.calculeazaPretDupaTaxe();

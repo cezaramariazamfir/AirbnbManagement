@@ -4,8 +4,8 @@ public class Apartament extends Proprietate {
     private int etaj;
     private boolean areBalcon;
 
-    public Apartament(int id_proprietate, String denumire, String locatie, int capacitate, boolean disponibilabilitate, double pretPeNoapte, int etaj, boolean areBalcon) {
-        super(id_proprietate, denumire, locatie, capacitate, disponibilabilitate, pretPeNoapte);
+    public Apartament(int id_proprietate, int id_proprietar, String denumire, String locatie, int capacitate, boolean disponibilabilitate, double pretPeNoapte, int etaj, boolean areBalcon) {
+        super(id_proprietate, id_proprietar,denumire, locatie, capacitate, disponibilabilitate, pretPeNoapte);
         this.etaj = etaj;
         this.areBalcon = areBalcon;
         this.calculeazaPretDupaTaxe();

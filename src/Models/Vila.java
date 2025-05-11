@@ -4,8 +4,8 @@ public class Vila extends Proprietate {
     private double suprafataGradina;
     boolean arePiscina;
 
-    public Vila(int id_proprietate, String denumire, String locatie, int capacitate, boolean disponibilabilitate, double pretPeNoapte, double suprafataGradina, boolean arePiscina) {
-        super(id_proprietate, denumire, locatie, capacitate, disponibilabilitate, pretPeNoapte);
+    public Vila(int id_proprietate, int id_proprietar, String denumire, String locatie, int capacitate, boolean disponibilabilitate, double pretPeNoapte, double suprafataGradina, boolean arePiscina) {
+        super(id_proprietate, id_proprietar, denumire, locatie, capacitate, disponibilabilitate, pretPeNoapte);
         this.suprafataGradina = suprafataGradina;
         this.arePiscina = arePiscina;
         this.calculeazaPretDupaTaxe();

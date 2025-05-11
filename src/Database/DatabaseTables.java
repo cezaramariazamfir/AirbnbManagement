@@ -20,11 +20,13 @@ public class DatabaseTables {
                 """
            CREATE TABLE IF NOT EXISTS Proprietate (
                id_proprietate INT PRIMARY KEY AUTO_INCREMENT,
+               id_proprietar INT NOT NULL,
                denumire VARCHAR(255) NOT NULL,
                locatie VARCHAR(255) NOT NULL,
                capacitate INT NOT NULL,
                disponibilabilitate BOOLEAN NOT NULL,
-               pretPeNoapte DOUBLE NOT NULL
+               pretPeNoapte DOUBLE NOT NULL,
+               FOREIGN KEY (id_proprietar) REFERENCES Proprietar(id_proprietar)
            )
             """,
                 """

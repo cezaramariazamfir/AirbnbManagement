@@ -1,6 +1,7 @@
 import Database.DAOs.ProprietarDAO;
 import Database.DatabaseTables;
 import Models.Proprietar;
+import Meniu.ProprietarMeniu;
 import Service.ProprietarService;
 
 import java.util.Scanner;
@@ -10,8 +11,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //CREAREA TABELELOR IN BD
-//        DatabaseTables tables = new DatabaseTables();
-//        tables.createTables();
+        DatabaseTables tables = new DatabaseTables();
+        tables.createTables();
 
 //        //ADAUG PROPRIETARI IN BD
 //        Proprietar proprietar = new Proprietar(1, "Ion Popescu", "ion.popescu@gmail.com", "ion123");
@@ -58,7 +59,9 @@ public class Main {
                             ProprietarService.login(email, parola);
                             String nume = ProprietarDAO.getInstance().findByEmail(email).getNume();
                             int id = ProprietarDAO.getInstance().findByEmail(email).getId_proprietar();
-                            //TODO MENIU COMUN ACTIUNI PROPRIETAR
+
+                            ProprietarMeniu meniu = new ProprietarMeniu(id);
+                            meniu.pornesteMeniu();
                             break;
                         case 2:
                             //Schimbare parola
@@ -81,7 +84,9 @@ public class Main {
                     Proprietar p = ProprietarService.citireProprietarDeLaTastatura();
                     String nume = p.getNume();
                     int id = p.getId_proprietar();
-                    //TODO MENIU COMUN ACTIUNI PROPRIETAR
+
+                    ProprietarMeniu meniu = new ProprietarMeniu(id);
+                    meniu.pornesteMeniu();
                     break;
 
                 case 3://TODO IMPLEMENTARE INTERFATA GUEST

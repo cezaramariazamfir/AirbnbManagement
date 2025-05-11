@@ -2,14 +2,16 @@ package Models;
 
 public abstract class Proprietate {
     protected int id_proprietate;
+    protected int id_proprietar;
     protected String denumire;
     protected String locatie;
     protected int capacitate;
     protected boolean disponibilabilitate;
     protected double pretPeNoapte;
 
-    public Proprietate(int id_proprietate, String denumire, String locatie, int capacitate, boolean disponibilabilitate, double pretPeNoapte) {
+    public Proprietate(int id_proprietate, int id_proprietar, String denumire, String locatie, int capacitate, boolean disponibilabilitate, double pretPeNoapte) {
         this.id_proprietate = id_proprietate;
+        this.id_proprietar = id_proprietar;
         this.denumire = denumire;
         this.locatie = locatie;
         this.capacitate = capacitate;
@@ -31,6 +33,10 @@ public abstract class Proprietate {
     public void setId_proprietate(int id_proprietate) {
         this.id_proprietate = id_proprietate;
     }
+
+    public int getId_proprietar() { return id_proprietar; }
+
+    public void setId_proprietar(int id_proprietar) { this.id_proprietar = id_proprietar; }
 
     public String getDenumire() {
         return denumire;
