@@ -32,10 +32,6 @@ Tema aleasa: Un sistem de management al proprietatilor date spre inchiriere pe t
 - lungime: double  
 - autonomieApa: int (in zile)
 
-### 🗓️ CalendarProprietate
-- id_proprietate: int  
-- disponibilitati: Map<LocalDate,Boolean>
-
 ### 🛎️ Rezervare
 - id_rezervare: int  
 - propritate: Proprietate  
