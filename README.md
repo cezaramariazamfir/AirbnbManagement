@@ -13,7 +13,8 @@ Tema aleasa: Un sistem de management al proprietatilor date spre inchiriere pe t
 - parola: String  
 
 ### 🏠 Proprietate (clasa abstracta)
-- id_proprietate: int  
+- id_proprietate: int
+- id_proprietar: int 
 - denumire: String  
 - locatie: String  
 - capacitate: int  
