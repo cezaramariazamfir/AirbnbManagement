@@ -40,6 +40,12 @@ Tema aleasa: Un sistem de management al proprietatilor date spre inchiriere pe t
 - costTotal: double  
 - status: Status (enum)
 
+  ### 👁️ Vizualizare  
+- `nume_proprietate`: String    
+- `id_proprietar`: int  
+- `dataVizualizare`: LocalDateTime    
+
+
 ### 🧾 Enum Status
 
 ```java
