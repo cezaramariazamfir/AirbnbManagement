@@ -60,11 +60,32 @@ public enum Status {
 ## 🧭 Meniu  
 ![Diagrama](meniu_diagrama.jpg)
 
+
+### 🔌 Persistenta datelor – JDBC
+
+- Sistemul foloseste **JDBC (Java Database Connectivity)** pentru interactiune cu baza de date.
+  
+- Am definit un **DAO generic de baza (`BasicDAO`)** cu operatii CRUD:
+  - `create(T entity)`
+  - `read(int id)`
+  - `update(T entity)`
+  - `delete(int id)`
+  - `readAll()`
+- Clasele DAO concrete implementeaza aceasta interfata: `ProprietarDAO`, `VilaDAO`, `CamperDAO`, `ApartamentDAO`.
+- Suplimentar am implementat si operatii de citire pentru `RezervareDAO`.
+- Clasele DAO sunt implementate folosind **pattern-ul Singleton** pentru a garanta ca exista o singura instanta a fiecarui DAO pe durata rularii aplicatiei.
+- Pentru unele enitiati, am adaugat **metode suplimentare** in DAO-uri pentru a acoperi cerinte specifice (ex. gasirea tutoror proprietatilor pentru un proprietar anume).
+  
+- Conexiunea cu baza de date este gestionata prin clasa `DatabaseConfiguration`, care implementeaza un singleton pentru conexiunea JDBC folosind `DriverManager`.
+- Aceasta clasa asigura reutilizarea aceleasi conexiuni pe durata executiei aplicatiei.
+  
+- Interogările SQL sunt executate prin `PreparedStatement` pentru a preveni vulnerabilitățile de tip SQL injection.
+- Operarea datelor se face prin servicii (Service classes) care apelează metodele DAO.
+
+
+
 ## 📊 Rapoarte și statistici  
 *(Ex. venituri generate, grad de ocupare, rezervări anulate etc.)*
 
 ## ⚙️ Servicii și acțiuni disponibile  
 *(Ex. adăugare/ștergere/modificare proprietate, rezervări, căutări)*
-
-## 💾 Persistență și audit  
-*(Salvare date cu JDBC, fișier CSV pentru audit acțiuni)*
