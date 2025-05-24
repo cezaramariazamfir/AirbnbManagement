@@ -61,8 +61,8 @@ public enum Status {
 ![Diagrama](meniu_diagrama.jpg)
 
 
-### 🔌 Persistenta datelor – JDBC
---
+## 🔌 Persistenta datelor – JDBC
+
 Sistemul folosește JDBC (Java Database Connectivity) pentru interacțiunea cu baza de date.
 
 - Am definit un **DAO generic de bază (`BasicDAO`)** cu operații CRUD:  
