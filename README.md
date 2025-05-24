@@ -99,7 +99,7 @@ Aplicatia este structurata pe patru servicii principale, fiecare responsabil de 
   Administreaza rezervarile facute pentru proprietati, incluzand crearea si validarea disponibilitatii.
 
 Fiecare serviciu foloseste DAO-urile aferente pentru accesul la date.
-Am implementat serviciile ca** **Singleton**.
+Am implementat serviciile ca **Singleton**.
 
 ## 📚 Colectii folosite
 
