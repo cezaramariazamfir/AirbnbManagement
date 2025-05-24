@@ -83,11 +83,33 @@ Sistemul folosește JDBC (Java Database Connectivity) pentru interacțiunea cu b
 - `PreparedStatement` este folosit pentru a construi și executa instrucțiuni SQL cu parametri siguri.
 - `executeUpdate()` execută instrucțiuni care modifică datele în DB și întoarce numărul de rânduri modificate.
 
+## ⚙️ Servicii
+
+Aplicatia este structurata pe patru servicii principale, fiecare responsabil de gestionarea unei entitati din sistem:
+
+- **ProprietarService**  
+  Gestioneaza operatiile legate de proprietari: creare, actualizare, stergere si cautare. De asemenea, poate valida datele si asigura securitatea accesului(login).
+
+- **ProprietateService**  
+  Se ocupa de administrarea proprietatilor (Apartament, Vila, Camper). Include metode pentru adaugarea, modificarea si stergerea proprietatilor, precum si pentru cautarea acestora dupa diferite criterii (ex.proprietar, pret).
+
+- **VizualizareService**  
+  Inregistreaza si gestioneaza istoricul vizualizarilor proprietatilor de catre utilizator, facand o recomandare la rezervare.
+
+- **RezervareService**  
+  Administreaza rezervarile facute pentru proprietati, incluzand crearea si validarea disponibilitatii.
+
+- Fiecare serviciu foloseste DAO-urile aferente pentru accesul la date.
+- Am implementat serviciile ca** **Singleton**.
+
+## 📚 Colectii folosite
+
+- In `VizualizareService` am folosit **TreeSet** pentru a stoca obiectele de tip `Vizualizare`.  
+- Am ales **TreeSet** deoarece pastreaza elementele sortate automat, iar pentru asta clasa `Vizualizare` implementeaza interfata `Comparable`.  
+- Aceasta structura ne permite sa obtinem rapid ultima vizualizare pentru recomandare.
+
+- Pentru gestionarea diferitelor tipuri de proprietati (`Vila`, `Apartament`, `Camper`), am folosit o colectie de tip **`List<Proprietate>`**.  
+- Aceasta colectie permite **polimorfismul**, deoarece toate clasele mostenesc clasa abstracta `Proprietate`, permitand manipularea lor in lista indiferent de tipul concret.
 
 
 
-## 📊 Rapoarte și statistici  
-*(Ex. venituri generate, grad de ocupare, rezervări anulate etc.)*
-
-## ⚙️ Servicii și acțiuni disponibile  
-*(Ex. adăugare/ștergere/modificare proprietate, rezervări, căutări)*
