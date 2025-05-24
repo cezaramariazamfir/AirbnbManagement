@@ -99,16 +99,16 @@ Aplicatia este structurata pe patru servicii principale, fiecare responsabil de 
 - **RezervareService**  
   Administreaza rezervarile facute pentru proprietati, incluzand crearea si validarea disponibilitatii.
 
-- Fiecare serviciu foloseste DAO-urile aferente pentru accesul la date.
-- Am implementat serviciile ca** **Singleton**.
+Fiecare serviciu foloseste DAO-urile aferente pentru accesul la date.
+Am implementat serviciile ca** **Singleton**.
 
 ## 📚 Colectii folosite
 
-- In `VizualizareService` am folosit **TreeSet** pentru a stoca obiectele de tip `Vizualizare`.  
+In `VizualizareService` am folosit **TreeSet** pentru a stoca obiectele de tip `Vizualizare`.  
 - Am ales **TreeSet** deoarece pastreaza elementele sortate automat, iar pentru asta clasa `Vizualizare` implementeaza interfata `Comparable`.  
 - Aceasta structura ne permite sa obtinem rapid ultima vizualizare pentru recomandare.
 
-- Pentru gestionarea diferitelor tipuri de proprietati (`Vila`, `Apartament`, `Camper`), am folosit o colectie de tip **`List<Proprietate>`**.  
+Pentru gestionarea diferitelor tipuri de proprietati (`Vila`, `Apartament`, `Camper`), am folosit o colectie de tip **`List<Proprietate>`**.  
 - Aceasta colectie permite **polimorfismul**, deoarece toate clasele mostenesc clasa abstracta `Proprietate`, permitand manipularea lor in lista indiferent de tipul concret.
 
 
