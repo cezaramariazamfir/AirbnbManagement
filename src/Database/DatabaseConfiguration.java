@@ -21,7 +21,6 @@ public class DatabaseConfiguration {
         try {
             if (connection == null || connection.isClosed()) {
                 connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
-                System.out.println("Conectat bd");
             }
         } catch (SQLException e) {
             throw new RuntimeException("Eroare la conectarea la baza de date: " + e.getMessage(), e);

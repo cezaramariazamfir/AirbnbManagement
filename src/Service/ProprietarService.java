@@ -69,7 +69,6 @@ public class ProprietarService {
 
         Proprietar proprietar = new Proprietar(nume, email, parola);
 
-        //il adaug in BD
         proprietarDAO.create(proprietar);
 
         return proprietar;

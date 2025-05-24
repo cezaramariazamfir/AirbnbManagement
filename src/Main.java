@@ -20,13 +20,6 @@ public class Main {
 //        DatabaseTables tables = new DatabaseTables();
 //        tables.createTables();
 
-//        //ADAUG PROPRIETARI IN BD
-//        Proprietar proprietar = new Proprietar(1, "Ion Popescu", "ion.popescu@gmail.com", "ion123");
-//        ProprietarDAO proprietarDAO = ProprietarDAO.getInstance();
-//        proprietarDAO.create(proprietar);
-//
-//        Proprietar proprietar2 = new Proprietar(2, "Ana Dumitrescu", "ana.dumitrescu@gmail.com", "ana123");
-//        proprietarDAO.create(proprietar2);
 
         //CREARE CONEXIUNE BD
         Connection connection = DatabaseConfiguration.getDatabaseConnection();

@@ -57,8 +57,6 @@ public class RezervareService {
 
 
     private boolean datesOverlap(LocalDate start1, LocalDate end1, LocalDate start2, LocalDate end2) {
-        // Verifică dacă două intervale se suprapun
-        // excludem cazul în care un interval se termină exact când începe celălalt
         return (start1.isBefore(end2)) && (end1.isAfter(start2));
     }
 }
