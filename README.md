@@ -110,5 +110,14 @@ In `VizualizareService` am folosit **TreeSet** pentru a stoca obiectele de tip `
 Pentru gestionarea diferitelor tipuri de proprietati (`Vila`, `Apartament`, `Camper`), am folosit o colectie de tip **`List<Proprietate>`**.  
 - Aceasta colectie permite **polimorfismul**, deoarece toate clasele mostenesc clasa abstracta `Proprietate`, permitand manipularea lor in lista indiferent de tipul concret.
 
+## 🔍 Audit
+
+Pentru a urmari actiunile importante din aplicatie, am implementat o clasa simpla de audit care scrie log-uri intr-un fisier CSV:
+
+- Clasa `Audit` ofera metoda statica `logAction(String actionName)` pentru a inregistra numele actiunii si timestamp-ul curent.  
+- Log-urile sunt salvate in fisierul `audit.csv`, fiecare linie continand actiunea si momentul in care a avut loc.
+
+
+
 
 
