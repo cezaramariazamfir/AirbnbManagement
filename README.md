@@ -58,7 +58,7 @@ public enum Status {
 ```
 
 ## 🧭 Meniu  
-![Diagrama](meniu_diagrama.png)
+![Diagrama](meniu_diagrama.jpg)
 
 ## 📊 Rapoarte și statistici  
 *(Ex. venituri generate, grad de ocupare, rezervări anulate etc.)*
