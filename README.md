@@ -51,7 +51,7 @@ Tema aleasa: Un sistem de management al proprietatilor date spre inchiriere pe t
 
 ```java
 public enum Status {
-    IN_ASTEPTARE,
+    ANULATA,
     CONFIRMATA,
     ACHITATA
 }
