@@ -63,24 +63,25 @@ public enum Status {
 
 ### 🔌 Persistenta datelor – JDBC
 
-- Sistemul foloseste **JDBC (Java Database Connectivity)** pentru interactiune cu baza de date.
- <br/> 
-- Am definit un **DAO generic de baza (`BasicDAO`)** cu operatii CRUD:
-  - `create(T entity)`
-  - `read(int id)`
-  - `update(T entity)`
-  - `delete(int id)`
+Sistemul folosește JDBC (Java Database Connectivity) pentru interacțiunea cu baza de date.
+
+- Am definit un **DAO generic de bază (`BasicDAO`)** cu operații CRUD:  
+  - `create(T entity)`  
+  - `read(int id)`  
+  - `update(T entity)`  
+  - `delete(int id)`  
   - `readAll()`
-- Clasele DAO concrete implementeaza aceasta interfata: `ProprietarDAO`, `VilaDAO`, `CamperDAO`, `ApartamentDAO`.
-- Suplimentar am implementat si operatii de citire pentru `RezervareDAO`.
-- Clasele DAO sunt implementate folosind **pattern-ul Singleton** pentru a garanta ca exista o singura instanta a fiecarui DAO pe durata rularii aplicatiei.
-- Pentru unele enitiati, am adaugat **metode suplimentare** in DAO-uri pentru a acoperi cerinte specifice (ex. gasirea tutoror proprietatilor pentru un proprietar anume).
-<br/>
-- Conexiunea cu baza de date este gestionata prin clasa `DatabaseConfiguration`, care implementeaza un singleton pentru conexiunea JDBC folosind `DriverManager`.  
-<br/>
-- `printStackTrace()` afiseaza detalii despre eroarea SQL, utile pentru depanare.
-- `PreparedStatement` e folosit pentru a construi si executa intructiuni SQL cu parametri siguri.
-- `executeUpdate()` executa intructiuni care modifica datele in DB si intoarce numarul de randuri modificate.
+
+- Clasele DAO concrete implementează această interfață: `ProprietarDAO`, `VilaDAO`, `CamperDAO`, `ApartamentDAO`.
+- Suplimentar, am implementat și operații de citire pentru `RezervareDAO`.
+- Clasele DAO sunt implementate folosind **pattern-ul Singleton** pentru a garanta că există o singură instanță a fiecărui DAO pe durata rulării aplicației.
+- Pentru unele entități, am adăugat **metode suplimentare** în DAO-uri pentru a acoperi cerințe specifice (ex. găsirea tuturor proprietăților pentru un proprietar anume).
+
+- Conexiunea cu baza de date este gestionată prin clasa `DatabaseConfiguration`, care implementează un singleton pentru conexiunea JDBC folosind `DriverManager`.
+
+- `printStackTrace()` afișează detalii despre eroarea SQL, utile pentru depanare.
+- `PreparedStatement` este folosit pentru a construi și executa instrucțiuni SQL cu parametri siguri.
+- `executeUpdate()` execută instrucțiuni care modifică datele în DB și întoarce numărul de rânduri modificate.
 
 
 
