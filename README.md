@@ -119,8 +119,8 @@ Pentru a urmari actiunile importante din aplicatie, am implementat o clasa simpl
 
 ## 📚 Resurse foosite
 
-1. [DAO Pattern]([https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm)
+1. [DAO Pattern](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm)
 
-2. [DAO Pattern](https://www.baeldung.com/java-dao-pattern)  
+2. [DAO Pattern 2](https://www.baeldung.com/java-dao-pattern)  
 
 3. 
