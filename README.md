@@ -117,4 +117,10 @@ Pentru a urmari actiunile importante din aplicatie, am implementat o clasa simpl
 - Clasa `Audit` ofera metoda statica `logAction(String actionName)` pentru a inregistra numele actiunii si timestamp-ul curent.  
 - Log-urile sunt salvate in fisierul `audit.csv`, fiecare linie continand actiunea si momentul in care a avut loc.
 
+## 📚 Resurse foosite
 
+1. [DAO Pattern]([https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm)
+
+2. [DAO Pattern](https://www.baeldung.com/java-dao-pattern)  
+
+3. 
