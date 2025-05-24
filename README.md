@@ -62,7 +62,7 @@ public enum Status {
 
 
 ### 🔌 Persistenta datelor – JDBC
-
+--
 Sistemul folosește JDBC (Java Database Connectivity) pentru interacțiunea cu baza de date.
 
 - Am definit un **DAO generic de bază (`BasicDAO`)** cu operații CRUD:  
