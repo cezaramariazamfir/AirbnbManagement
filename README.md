@@ -72,13 +72,12 @@ Sistemul folosește JDBC (Java Database Connectivity) pentru interacțiunea cu b
   - `delete(int id)`  
   - `readAll()`
 
-- Clasele DAO concrete implementează această interfață: `ProprietarDAO`, `VilaDAO`, `CamperDAO`, `ApartamentDAO`.
+Clasele DAO concrete implementează această interfață: `ProprietarDAO`, `VilaDAO`, `CamperDAO`, `ApartamentDAO`.
 - Suplimentar, am implementat și operații de citire pentru `RezervareDAO`.
 - Clasele DAO sunt implementate folosind **pattern-ul Singleton** pentru a garanta că există o singură instanță a fiecărui DAO pe durata rulării aplicației.
 - Pentru unele entități, am adăugat **metode suplimentare** în DAO-uri pentru a acoperi cerințe specifice (ex. găsirea tuturor proprietăților pentru un proprietar anume).
 
-- Conexiunea cu baza de date este gestionată prin clasa `DatabaseConfiguration`, care implementează un singleton pentru conexiunea JDBC folosind `DriverManager`.
-
+Conexiunea cu baza de date este gestionată prin clasa `DatabaseConfiguration`, care implementează un singleton pentru conexiunea JDBC folosind `DriverManager`.
 - `printStackTrace()` afișează detalii despre eroarea SQL, utile pentru depanare.
 - `PreparedStatement` este folosit pentru a construi și executa instrucțiuni SQL cu parametri siguri.
 - `executeUpdate()` execută instrucțiuni care modifică datele în DB și întoarce numărul de rânduri modificate.
