@@ -77,9 +77,12 @@ public enum Status {
 - Pentru unele enitiati, am adaugat **metode suplimentare** in DAO-uri pentru a acoperi cerinte specifice (ex. gasirea tutoror proprietatilor pentru un proprietar anume).
   
 - Conexiunea cu baza de date este gestionata prin clasa `DatabaseConfiguration`, care implementeaza un singleton pentru conexiunea JDBC folosind `DriverManager`.
-- Aceasta clasa asigura reutilizarea aceleasi conexiuni pe durata executiei aplicatiei.
+- Aceasta clasa asigura reutilizarea aceleasi conexiuni pe durata executiei aplicatiei.  
   
-- Interogările SQL sunt executate prin `PreparedStatement` pentru a preveni vulnerabilitățile de tip SQL injection.
+- `printStackTrace()` afișează detalii despre eroarea SQL, utile pentru depanare.
+- `PreparedStatement` e folosit pentru a construi și executa instrucțiuni SQL cu parametri siguri și performanți.
+- `executeUpdate()` execută instrucțiuni care modifică datele în DB, ca INSERT, și întoarce numărul de rânduri modificate.
+
 - Operarea datelor se face prin servicii (Service classes) care apelează metodele DAO.
 
 
