@@ -1,18 +1,24 @@
-import Database.DAOs.ProprietarDAO;
+import Database.DAOs.*;
+import Database.DatabaseConfiguration;
 import Database.DatabaseTables;
+import Meniu.GuestMeniu;
 import Models.Proprietar;
 import Meniu.ProprietarMeniu;
 import Service.ProprietarService;
+import Service.RezervareService;
 
+import java.sql.Connection;
 import java.util.Scanner;
+
+import Audit.Audit;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         //CREAREA TABELELOR IN BD
-        DatabaseTables tables = new DatabaseTables();
-        tables.createTables();
+//        DatabaseTables tables = new DatabaseTables();
+//        tables.createTables();
 
 //        //ADAUG PROPRIETARI IN BD
 //        Proprietar proprietar = new Proprietar(1, "Ion Popescu", "ion.popescu@gmail.com", "ion123");
@@ -21,6 +27,19 @@ public class Main {
 //
 //        Proprietar proprietar2 = new Proprietar(2, "Ana Dumitrescu", "ana.dumitrescu@gmail.com", "ana123");
 //        proprietarDAO.create(proprietar2);
+
+        //CREARE CONEXIUNE BD
+        Connection connection = DatabaseConfiguration.getDatabaseConnection();
+
+        //DAOs
+        RezervareDAO rezervareDAO = new RezervareDAO(connection);
+        ProprietarDAO proprietarDAO = ProprietarDAO.getInstance(connection);
+        ApartamentDAO apartamentDAO = ApartamentDAO.getInstance(connection);
+        VilaDAO vilaDAO = VilaDAO.getInstance(connection);
+        CamperDAO camperDAO = CamperDAO.getInstance(connection);
+
+        //SERVICE
+        ProprietarService proprietarService = new ProprietarService(connection);
 
         //MENIU
         Scanner scanner = new Scanner(System.in);
@@ -56,12 +75,14 @@ public class Main {
                             System.out.print("Parola: ");
                             String parola = scanner.nextLine();
 
-                            ProprietarService.login(email, parola);
-                            String nume = ProprietarDAO.getInstance().findByEmail(email).getNume();
-                            int id = ProprietarDAO.getInstance().findByEmail(email).getId_proprietar();
+                            if (proprietarService.login(email, parola) == true) {
+                                Audit.logAction("Login reusit user " + email);
+                                String nume = proprietarDAO.findByEmail(email).getNume();
+                                int id = proprietarDAO.findByEmail(email).getId_proprietar();
 
-                            ProprietarMeniu meniu = new ProprietarMeniu(id);
-                            meniu.pornesteMeniu();
+                                ProprietarMeniu meniu = new ProprietarMeniu(id, connection);
+                                meniu.pornesteMeniu();
+                            }
                             break;
                         case 2:
                             //Schimbare parola
@@ -71,7 +92,8 @@ public class Main {
                             String parolaVeche = scanner.nextLine();
                             System.out.print("Parola noua: ");
                             String parolaNoua = scanner.nextLine();
-                            ProprietarService.schimbaParola(email2, parolaVeche, parolaNoua, parolaNoua);
+                            proprietarService.schimbaParola(email2, parolaVeche, parolaNoua, parolaNoua);
+                            Audit.logAction("Schimbare parola user " + email2);
                             break;
                         case 3:
                             //Inapoi
@@ -81,17 +103,18 @@ public class Main {
 
                 case 2:
                     //Proprietar nou
-                    Proprietar p = ProprietarService.citireProprietarDeLaTastatura();
+                    Proprietar p = proprietarService.citireProprietarDeLaTastatura();
                     String nume = p.getNume();
                     int id = p.getId_proprietar();
 
-                    ProprietarMeniu meniu = new ProprietarMeniu(id);
+                    Audit.logAction("Creare prorpietar nou " + p.getEmail());
+                    ProprietarMeniu meniu = new ProprietarMeniu(id, connection);
                     meniu.pornesteMeniu();
                     break;
 
-                case 3://TODO IMPLEMENTARE INTERFATA GUEST
-                    //Guest
-
+                case 3:
+                    GuestMeniu guestMeniu = new GuestMeniu(connection);
+                    guestMeniu.pornesteMeniu();
                     break;
 
                 case 4:

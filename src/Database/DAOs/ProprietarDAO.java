@@ -11,13 +11,13 @@ public class ProprietarDAO implements BasicDAO<Proprietar> {
     private static ProprietarDAO instance;
     private final Connection connection;
 
-    private ProprietarDAO() {
-        this.connection = DatabaseConfiguration.getDatabaseConnection();
+    private ProprietarDAO(Connection connection) {
+        this.connection = connection;
     }
 
-    public static ProprietarDAO getInstance() {
+    public static ProprietarDAO getInstance(Connection connection) {
         if (instance == null) {
-            instance = new ProprietarDAO();
+            instance = new ProprietarDAO(connection);
         }
         return instance;
     }

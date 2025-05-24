@@ -23,8 +23,12 @@ public abstract class Proprietate {
 
     @Override
     public String toString() {
-        return  "Tip: " + this.getClass().getSimpleName() + "ID: " + id_proprietate + ", Denumire: " + denumire + ", Locație: " + locatie + ", Preț/noapte: " + pretPeNoapte;
+        return "ID: " + id_proprietate + " - " + denumire + " (" + this.getClass().getSimpleName() + ")\n"
+                + "Locatie: " + locatie + "\n"
+                + "Capacitate: " + capacitate + "\n"
+                + "PretPeNoapte: " + pretPeNoapte;
     }
+
 
     public int getId_proprietate() {
         return id_proprietate;

@@ -7,10 +7,17 @@ import java.util.List;
 
 public class VilaDAO implements BasicDAO<Vila> {
 
+    private static VilaDAO instance;
     private final Connection connection;
-
-    public VilaDAO(Connection connection) {
+    private VilaDAO(Connection connection) {
         this.connection = connection;
+    }
+
+    public static VilaDAO getInstance(Connection connection) {
+        if (instance == null) {
+            instance = new VilaDAO(connection);
+        }
+        return instance;
     }
 
     @Override

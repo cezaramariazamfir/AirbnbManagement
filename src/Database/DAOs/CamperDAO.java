@@ -6,11 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CamperDAO implements BasicDAO<Camper> {
-
+    private static CamperDAO instance;
     private final Connection connection;
 
-    public CamperDAO(Connection connection) {
+    private CamperDAO(Connection connection) {
         this.connection = connection;
+    }
+
+    public static CamperDAO getInstance(Connection connection) {
+        if (instance == null) {
+            instance = new CamperDAO(connection);
+        }
+        return instance;
     }
 
     @Override

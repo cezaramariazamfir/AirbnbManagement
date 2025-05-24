@@ -19,7 +19,7 @@ public class Camper extends Proprietate{
 
     @Override
     public String toString() {
-        return super.toString() + ", Lungime camper: " + lungime + ", Autonomie apa(zile): " + autonomieApa;
+        return super.toString() + "\nLungime camper(m): " + lungime + "\nAutonomie apa(zile): " + autonomieApa + '\n';
     }
 
     public double getLungime() {

@@ -18,7 +18,7 @@ public class Vila extends Proprietate {
 
     @Override
     public String toString() {
-        return super.toString() + ", Suprafata gradina(m^2): " + suprafataGradina + ", Are piscina: " + arePiscina;
+        return super.toString() + "\nSuprafata gradina(m^2): " + suprafataGradina + "\nAre piscina: " + (arePiscina ? "Da" : "Nu") + '\n';
     }
 
     public double getSuprafataGradina() {

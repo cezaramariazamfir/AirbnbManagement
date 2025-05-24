@@ -55,21 +55,12 @@ public class DatabaseTables {
             """,
                 """
             CREATE TABLE IF NOT EXISTS Rezervare (
-                id_rezervare INT PRIMARY KEY,
+                id_rezervare INT PRIMARY KEY AUTO_INCREMENT,
                 id_proprietate INT,
                 dataStart DATE,
                 dataEnd DATE,
                 costTotal DOUBLE,
                 status ENUM('IN_ASTEPTARE', 'CONFIRMATA', 'ACHITATA'),
-                FOREIGN KEY (id_proprietate) REFERENCES Proprietate(id_proprietate)
-            )
-            """,
-                """
-            CREATE TABLE IF NOT EXISTS CalendarProprietate (
-                id_proprietate INT,
-                data DATE,
-                disponibilitate BOOLEAN,
-                PRIMARY KEY (id_proprietate, data),
                 FOREIGN KEY (id_proprietate) REFERENCES Proprietate(id_proprietate)
             )
             """

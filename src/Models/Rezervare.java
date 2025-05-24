@@ -21,6 +21,14 @@ public class Rezervare {
         this.calculeazaCostTotal(); // calculezi automat la creare
     }
 
+    public Rezervare(Proprietate proprietate, LocalDate dataStart, LocalDate dataEnd, Status status) {
+        this.proprietate = proprietate;
+        this.dataStart = dataStart;
+        this.dataEnd = dataEnd;
+        this.status = status;
+        this.calculeazaCostTotal(); // calculezi automat la creare
+    }
+
     public void calculeazaCostTotal() {
         int nrZile = (int) ChronoUnit.DAYS.between(dataStart, dataEnd);
         this.costTotal = nrZile * proprietate.getPretPeNoapte();

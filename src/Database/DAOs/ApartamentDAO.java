@@ -8,11 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ApartamentDAO implements BasicDAO<Apartament> {
-
+    private static ApartamentDAO instance;
     private final Connection connection;
-
-    public ApartamentDAO(Connection connection) {
+    private ApartamentDAO(Connection connection) {
         this.connection = connection;
+    }
+
+    public static ApartamentDAO getInstance(Connection connection) {
+        if (instance == null) {
+            instance = new ApartamentDAO(connection);
+        }
+        return instance;
     }
 
     @Override
@@ -30,7 +36,6 @@ public class ApartamentDAO implements BasicDAO<Apartament> {
             System.out.println("ps1.executeUpdate()");
             ps1.executeUpdate();
 
-            System.out.printf("aici");
             ResultSet rs = ps1.getGeneratedKeys();
             if (rs.next()) {
                 System.out.println("rs.next()");

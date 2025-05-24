@@ -18,7 +18,7 @@ public class Apartament extends Proprietate {
 
     @Override
     public String toString() {
-        return super.toString() + ", Etaj: " + etaj + ", Are balcon: " + areBalcon;
+        return super.toString() + "\nEtaj: " + etaj + "\nAre balcon: " + (areBalcon ? "Da" : "Nu") + '\n';
     }
 
     public int getEtaj() {
