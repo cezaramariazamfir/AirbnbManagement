@@ -42,9 +42,9 @@ Tema aleasa: Un sistem de management al proprietatilor date spre inchiriere pe t
 - status: Status (enum)
 
   ### 👁️ Vizualizare  
-- `nume_proprietate`: String    
-- `id_proprietar`: int  
-- `dataVizualizare`: LocalDateTime    
+- nume_proprietate: String    
+- id_proprietar: int  
+- dataVizualizare: LocalDateTime    
 
 
 ### 🧾 Enum Status
