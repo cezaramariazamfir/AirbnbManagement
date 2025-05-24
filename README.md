@@ -55,3 +55,15 @@ public enum Status {
     CONFIRMATA,
     ACHITATA
 }
+
+## 🧭 Meniu  
+![Diagrama](meniu_diagrama.png)
+
+## 📊 Rapoarte și statistici  
+*(Ex. venituri generate, grad de ocupare, rezervări anulate etc.)*
+
+## ⚙️ Servicii și acțiuni disponibile  
+*(Ex. adăugare/ștergere/modificare proprietate, rezervări, căutări)*
+
+## 💾 Persistență și audit  
+*(Salvare date cu JDBC, fișier CSV pentru audit acțiuni)*
