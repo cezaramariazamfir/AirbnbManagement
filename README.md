@@ -118,6 +118,3 @@ Pentru a urmari actiunile importante din aplicatie, am implementat o clasa simpl
 - Log-urile sunt salvate in fisierul `audit.csv`, fiecare linie continand actiunea si momentul in care a avut loc.
 
 
-
-
-
