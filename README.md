@@ -54,7 +54,7 @@ public enum Status {
     ANULATA,
     CONFIRMATA,
     ACHITATA
-}
+}```
 
 ## 🧭 Meniu  
 ![Diagrama](meniu_diagrama.png)
