@@ -64,7 +64,7 @@ public enum Status {
 ### 🔌 Persistenta datelor – JDBC
 
 - Sistemul foloseste **JDBC (Java Database Connectivity)** pentru interactiune cu baza de date.
-  
+ <br/> 
 - Am definit un **DAO generic de baza (`BasicDAO`)** cu operatii CRUD:
   - `create(T entity)`
   - `read(int id)`
@@ -75,15 +75,13 @@ public enum Status {
 - Suplimentar am implementat si operatii de citire pentru `RezervareDAO`.
 - Clasele DAO sunt implementate folosind **pattern-ul Singleton** pentru a garanta ca exista o singura instanta a fiecarui DAO pe durata rularii aplicatiei.
 - Pentru unele enitiati, am adaugat **metode suplimentare** in DAO-uri pentru a acoperi cerinte specifice (ex. gasirea tutoror proprietatilor pentru un proprietar anume).
-  
-- Conexiunea cu baza de date este gestionata prin clasa `DatabaseConfiguration`, care implementeaza un singleton pentru conexiunea JDBC folosind `DriverManager`.
-- Aceasta clasa asigura reutilizarea aceleasi conexiuni pe durata executiei aplicatiei.  
-  
-- `printStackTrace()` afișează detalii despre eroarea SQL, utile pentru depanare.
-- `PreparedStatement` e folosit pentru a construi și executa instrucțiuni SQL cu parametri siguri și performanți.
-- `executeUpdate()` execută instrucțiuni care modifică datele în DB, ca INSERT, și întoarce numărul de rânduri modificate.
+<br/>
+- Conexiunea cu baza de date este gestionata prin clasa `DatabaseConfiguration`, care implementeaza un singleton pentru conexiunea JDBC folosind `DriverManager`.  
+<br/>
+- `printStackTrace()` afiseaza detalii despre eroarea SQL, utile pentru depanare.
+- `PreparedStatement` e folosit pentru a construi si executa intructiuni SQL cu parametri siguri.
+- `executeUpdate()` executa intructiuni care modifica datele in DB si intoarce numarul de randuri modificate.
 
-- Operarea datelor se face prin servicii (Service classes) care apelează metodele DAO.
 
 
 
